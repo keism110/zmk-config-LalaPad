@@ -198,7 +198,7 @@
         kome3_macro: kome3_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp STAR &kp STAR &kp STAR>;
+            bindings = <&kp STAR &kp STAR &kp STAR>;
             label = "KOME3_MACRO";
         };
 
@@ -207,6 +207,20 @@
             #binding-cells = <0>;
             bindings = <&kp LANGUAGE_1 &kp NUMBER_1 &kp NUMBER_2 &kp SPACE &kp ENTER &kp LEFT_ARROW>;
             label = "INYO_MACRO";
+        };
+
+        ad: ad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp LEFT_BRACKET &kp A &kp D &kp RIGHT_BRACKET>;
+            label = "AD";
+        };
+
+        keisuke: keisuke {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp K &kp E &kp I &kp S &kp U &kp K &kp E &kp NUMBER_1 &kp NUMBER_1 &kp N0>;
+            label = "KEISUKE";
         };
     };
 
@@ -218,11 +232,11 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E                   &kp R                &kp T                     &kp Y                   &kp U          &kp I            &kp O       &kp P           &mt EQUAL MINUS
-&kp TAB    &kp A         &kp S         &kp D                   &kp F                &kp G                     &kp H                   &kp J          &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
-&kp LSHFT  &kp Z         &kp X         &kp C                   &kp V                &kp B                     &kp N                   &kp M          &kp COMMA        &kp PERIOD  &kp UP          &kp SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_COMMAND SPACE  &mo SECONDARY_LAYER  &lt TERTIARY_LAYER LANG2  &lt SYSTEM_LAYER LANG1  &kp BACKSPACE  &kp RET          &kp LEFT    &kp DOWN        &kp RIGHT
-                         &allow_end    &allow_pagedown         &allow_home          &allow_pageup             &allow_pageup           &allow_home    &allow_pagedown  &allow_end
+&kp LEFT_SHIFT  &kp Q         &kp W       &kp E                   &kp R                &kp T                     &kp Y                   &kp U          &kp I            &kp O       &kp P           &mt EQUAL MINUS
+&kp TAB         &kp A         &kp S       &kp D                   &kp F                &kp G                     &kp H                   &kp J          &kp K            &kp L       &mt2 SEMI LBKT  &mt2 SQT RBKT
+&kp LSHFT       &kp Z         &kp X       &kp C                   &kp V                &kp B                     &kp N                   &kp M          &kp COMMA        &kp PERIOD  &kp UP          &kp SLASH
+&kp LCTRL       &kp LEFT_ALT  &kp ESC     &mt LEFT_COMMAND SPACE  &mo SECONDARY_LAYER  &lt TERTIARY_LAYER LANG2  &lt SYSTEM_LAYER LANG1  &kp BACKSPACE  &kp RET          &kp LEFT    &kp DOWN        &kp RIGHT
+                              &allow_end  &allow_pagedown         &allow_home          &allow_pageup             &allow_pageup           &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
@@ -242,8 +256,8 @@
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4       &kome3_macro  &trans  &trans  &trans  &trans  &trans  &inter_macro
-&trans  &kp F6   &kp F7   &kp F8   &inyo_macro  &kome3_macro  &trans  &trans  &trans  &trans  &trans  &keisuke_macro
+&trans  &kp F1   &kp F2   &kp F3   &kp F4       &ad           &trans  &trans  &trans  &trans  &trans  &inter_macro
+&trans  &kp F6   &kp F7   &kp F8   &inyo_macro  &kome3_macro  &trans  &trans  &trans  &trans  &trans  &keisuke
 &trans  &kp F11  &kp F12  &kp F13  &kp F14      &kp F15       &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans   &trans       &trans        &trans  &trans  &trans  &trans  &trans  &trans
                  &trans   &trans   &trans       &trans        &trans  &trans  &trans  &trans
